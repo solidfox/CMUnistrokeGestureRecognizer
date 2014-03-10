@@ -44,6 +44,7 @@ typedef struct _CMURResult {
 typedef struct _CMUROptions {
     bool useProtractor;
     bool rotationNormalisationDisabled;
+    bool sizeNormalisationDisabled;
 } CMUROptions;
 
 typedef struct _CMUROptions *CMUROptionsRef;

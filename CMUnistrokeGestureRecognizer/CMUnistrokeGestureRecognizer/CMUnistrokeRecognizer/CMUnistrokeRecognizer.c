@@ -95,7 +95,9 @@ unistrokeRecognizePathFromTemplates(CMURPathRef path, CMURTemplatesRef templates
 	normalisedPath = unistrokeRecognizerRotateBy(resampledPath, -radians);
     }
 
-    unistrokeRecognizerScaleTo(normalisedPath, BoundingBoxSize);
+    if (options && !options->sizeNormalisationDisabled) {
+        unistrokeRecognizerScaleTo(normalisedPath, BoundingBoxSize);
+    }
     GLKVector2 origin = GLKVector2Make(0.0f, 0.0f);
     unistrokeRecognizerTranslateTo(normalisedPath, origin);
 
@@ -156,7 +158,9 @@ unistrokeRecognizerResampledNormalisedTemplate(const char *name, CMURPathRef pat
 	normalisedPath = unistrokeRecognizerRotateBy(resampledPath, -radians);
     }
     
-    unistrokeRecognizerScaleTo(normalisedPath, BoundingBoxSize);
+    if (options && !options->sizeNormalisationDisabled) {
+        unistrokeRecognizerScaleTo(normalisedPath, BoundingBoxSize);
+    }
     GLKVector2 origin = GLKVector2Make(0.0f, 0.0f);
     unistrokeRecognizerTranslateTo(normalisedPath, origin);
     

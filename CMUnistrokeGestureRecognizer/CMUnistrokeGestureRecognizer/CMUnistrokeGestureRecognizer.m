@@ -158,6 +158,15 @@ CMURCGPathApplierFunc(void *info, const CGPathElement *element);
     return (! _options->rotationNormalisationDisabled);
 }
 
+- (void)setSizeNormalisationEnabled:(BOOL)sizeNormalisationEnabled
+{
+    _options->sizeNormalisationDisabled = (! sizeNormalisationEnabled);
+}
+
+- (BOOL)sizeNormalisationEnabled
+{
+    return (! _options->sizeNormalisationDisabled);
+}
 
 #pragma mark - Recognize Unistroke
 
